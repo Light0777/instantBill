@@ -290,7 +290,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative">
+      <section className="relative sm:hidden">
         {/* Sticky viewport */}
 
         {/* Heading */}
@@ -305,7 +305,7 @@ export default function Home() {
         </div>
 
         {/* Horizontal scroll track */}
-        <div className="overflow-hidden px-5 flex sm:hidden">
+        <div className="overflow-hidden px-5 flex">
           <div className="grid gap-2 px-1 will-change-transform">
             <img src="/dashboard.png" className="w-[100vw] rounded-xl border border-white/10" />
             <img src="/products.png" className="w-[100vw] rounded-xl border border-white/10" />
