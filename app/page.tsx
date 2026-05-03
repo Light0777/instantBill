@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import { IoBarcodeOutline, IoCardOutline, IoCashOutline, IoCloudDoneOutline, IoCloudOfflineOutline, IoCloudOutline, IoCloudUploadOutline, IoCubeOutline, IoLockClosedOutline, IoLogoWhatsapp, IoPricetagOutline, IoPrintOutline, IoReceiptOutline } from "react-icons/io5";
 
-const WHATSAPP_NUMBER = "919999999999"; // ← Replace with your WhatsApp number
+const WHATSAPP_NUMBER = process.env.WHATSAPP_NUMBER; // ← Replace with your WhatsApp number
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hi! I'm interested in InstantBill POS software. Can you tell me more?"
+  process.env.WHATSAPP_MESSAGE || "Hi! I'm interested in InstantBill POS software. Can you tell me more?"
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
@@ -187,7 +187,7 @@ export default function Home() {
         </div>
 
         {/* Headline */}
-        <h1 className="animate-fade-in-up delay-100 text-center font-syne font-extrabold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl">
+        <h1 className="animate-fade-in-up delay-100 text-center font-syne font-extrabold text-3xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl">
           Billing that
           <span className="block text-green-400 glow-text">never stops.</span>
         </h1>
