@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import { IoBarcodeOutline, IoCardOutline, IoCashOutline, IoCloudDoneOutline, IoCloudOfflineOutline, IoCloudOutline, IoCloudUploadOutline, IoCubeOutline, IoLockClosedOutline, IoLogoWhatsapp, IoPricetagOutline, IoPrintOutline, IoReceiptOutline } from "react-icons/io5";
 
-const WHATSAPP_NUMBER = process.env.WHATSAPP_NUMBER; // ← Replace with your WhatsApp number
+const WHATSAPP_NUMBER = 9962065398;
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  process.env.WHATSAPP_MESSAGE || "Hi! I'm interested in InstantBill POS software. Can you tell me more?"
+  "Hi! I'm interested in InstantBill POS software. Can you tell me more?"
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
