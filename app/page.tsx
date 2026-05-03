@@ -94,8 +94,7 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 3, // 🔥 controls smoothness
-      // smooth: true,
+      duration: 1.2,
     });
 
     function raf(time: number) {
@@ -104,6 +103,24 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
+
+    // ✅ THIS is correct — instance method
+    lenis.on("scroll", () => {
+      if (!containerRef.current || !trackRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const totalHeight =
+        containerRef.current.offsetHeight - window.innerHeight;
+
+      const scrolled = Math.min(Math.max(-rect.top, 0), totalHeight);
+      const progress = scrolled / totalHeight;
+
+      const maxTranslate =
+        trackRef.current.scrollWidth - window.innerWidth;
+
+      trackRef.current.style.transform =
+        `translateX(-${progress * maxTranslate * SPEED}px)`;
+    });
 
     return () => {
       lenis.destroy();
@@ -450,7 +467,7 @@ export default function Home() {
 
             <div className="relative">
               <div className="flex items-end justify-center gap-2 mb-2">
-                <span className="text-6xl font-syne font-extrabold text-white">₹1,000</span>
+                <span className="text-6xl font-syne font-extrabold text-white">₹1,999</span>
               </div>
               <p className="text-gray-500 mb-8">One-time purchase · Lifetime license</p>
 
