@@ -255,7 +255,7 @@ export default function Home() {
         <div className="animate-fade-in-up mt-16 grid grid-cols-3 gap-6 border-gradient rounded-2xl px-8 py-5 max-w-lg w-full">
           {[
             { val: "100%", label: "Offline" },
-            { val: "₹1K", label: "One-time" },
+            { val: "₹5K", label: "One-time" },
             { val: "GST", label: "Compliant" },
           ].map((s) => (
             <div key={s.label} className="text-center">
